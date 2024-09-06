@@ -6,7 +6,7 @@ Github repository: *https://github.com/alerte-telemetrie/SelectIndividual-byBatt
 Description*
 
 ## Description
-*Enter here the short description of the App that might also be used when filling out the description during App submission to MoveApps. This text is directly presented to Users that look through the list of Apps when compiling Workflows.*
+*Takes an end date (default NOW) and filters on all locations within the last X hours (default 24 hours). Retrieves the percentage of battery charge during the last location and the number of locations recorded by the GPS transmitter over the set time period. Then, extracts the names of individuals with a battery charge percent below a defined low battery charge percent threshold (default 10%).*
 
 ## Documentation
 *Enter here a detailed description of your App. What is it intended to be used for. Which steps of analyses are performed and how. Please be explicit about any detail that is important for use and understanding of the App and its outcomes. You might also refer to the sections below.*
