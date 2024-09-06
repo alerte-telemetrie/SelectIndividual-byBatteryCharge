@@ -1,7 +1,9 @@
 # SelectIndividual-byBatteryCharge
 MoveApps
 
-Github repository: *github.com/yourAccount/Name-of-App* *(provide the link to the repository where the code of the App can be found)*
+Github repository: *https://github.com/alerte-telemetrie/SelectIndividual-byBatteryCharge*
+
+Description*
 
 ## Description
 *Enter here the short description of the App that might also be used when filling out the description during App submission to MoveApps. This text is directly presented to Users that look through the list of Apps when compiling Workflows.*
