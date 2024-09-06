@@ -27,7 +27,7 @@
       "name": "Name of the battery charge percentage column between quotation marks",
       "description": "Enter the name of the column representing the percentage of battery charge between quotation marks. Default value battery_charge_percent.",
       "defaultValue": "battery_charge_percent",
-      "type": "TEXT"
+      "type": "CHARACTER"
     }
   ],
   "dependencies": {
