@@ -6,10 +6,10 @@ Github repository: *https://github.com/alerte-telemetrie/SelectIndividual-byBatt
 Description*
 
 ## Description
-*Takes an end date (default NOW) and filters on all locations within the last X hours (default 24 hours). Retrieves the percentage of battery charge during the last location and the number of locations recorded by the GPS transmitter over the set time period. Then, extracts the names of individuals with a battery charge percent below a defined low battery charge percent threshold (default 10%).*
+Takes an end date (default NOW) and filters on all locations within the last X hours (default 24 hours). Retrieves the percentage of battery charge during the last location and the number of locations recorded by the GPS transmitter over the set time period. Then, extracts the names of individuals with a battery charge percent below a defined low battery charge percent threshold (default 10%).
 
 ## Documentation
-*Enter here a detailed description of your App. What is it intended to be used for. Which steps of analyses are performed and how. Please be explicit about any detail that is important for use and understanding of the App and its outcomes. You might also refer to the sections below.*
+This function is designed to identify individuals whose tags have a low battery charge. The battery charge percentage at the last location is retrieved, as well as the number of locations in the last X hours. If the battery charge is below a user-defined threshold, a table and movestack are extracted with the individual's movebank ID.
 
 ### Application scope
 #### Generality of App usability
