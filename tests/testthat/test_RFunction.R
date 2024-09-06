@@ -1,4 +1,5 @@
-test_data <- test_data("input3_move2loc_LatLon.rds")
+#test_data <- test_data("input3_move2loc_LatLon.rds")
+test_data <- test_data("data_test_SelectIndividual-byBatteryCharge.rds")
 
 test_that("happy path", {
   actual <- rFunction(data = test_data, sdk = "unit test", year = 1998)
