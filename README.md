@@ -9,7 +9,7 @@ Description*
 Takes an end date (default NOW) and filters on all locations within the last X hours (default 24 hours). Retrieves the percentage of battery charge during the last location and the number of locations recorded by the GPS transmitter (or tag) over the set time period. Then, extracts the names of individuals with a battery charge percentage below a defined low battery charge percentage threshold (default 10%).
 
 ## Documentation
-This function is designed to identify individuals whose tags have a low battery charge. The battery charge percentage at the last location is retrieved, as well as the number of locations in the last X hours. If the battery charge is below a user-defined threshold, a table and movestack are extracted with the individual's movebank ID.
+This function is designed to identify individuals whose GPS transmitter have a low battery charge. The battery charge percentage at the last location is retrieved, as well as the number of locations in the last X hours. If the battery charge is below a user-defined threshold, a table and movestack are extracted with the individual's movebank ID.
 
 ### Input data
 MoveStack in Movebank format
