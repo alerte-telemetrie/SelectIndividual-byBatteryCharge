@@ -1,25 +1,33 @@
 {
-  "version": "1.2",
+  "version": "1.0.0",
   "settings": [
     {
-      "id": "sdk",
-      "name": "The name of the MoveApps SDK",
-      "description": "Showcase requesting a string input from the users of your app.",
-      "defaultValue": "MoveApps SDK",
-      "type": "STRING"
+      "id": "time_now",
+      "name": "Reference timestamp",
+      "description": "Define you reference time - the time from which you want to select 'back' your data. If your tags are still running and you are in the field, this is typically NOW. Here, if you dont enter anything, per default NOW will be used. If you enter date, please make sure that the timestamp is in UTC and follows the format 'YYYY-mm-dd HH:MM:SS'",
+      "defaultValue": null,
+      "type": "INSTANT"
     },
     {
-      "id": "year",
-      "name": "The year",
-      "description": "Insert description for the year setting setting",
-      "defaultValue": 2022,
-      "type": "INTEGER"
+      "id": "dur",
+      "name": "Duration of data to select",
+      "description": "Duration number of the data to be selected. Unit hours. Default 24.",
+      "defaultValue": 24,
+      "type": "DOUBLE"
     },
     {
-      "id": "auxiliary-file-a",
-      "name": "Personalization",
-      "description": "You can personalize the app by providing a file",
-      "type": "USER_FILE"
+      "id": "low_bat",
+      "name": "Low battery charge threshold",
+      "description": "Battery charge threshold below which the GPS transmitter is considered to be lightly charged. Unit %. Default value 10.",
+      "defaultValue": 10,
+      "type": "DOUBLE"
+    },
+    {
+      "id": "column_name",
+      "name": "Name of the battery charge percentage column between "" ",
+      "description": "Enter the name of the column representing the percentage of battery charge in quotation marks. Default value "battery_charge_percent".",
+      "defaultValue": "battery_charge_percent",
+      "type": "CHARACTER"
     }
   ],
   "dependencies": {
@@ -32,46 +40,36 @@
       }
     ]
   },
-  "providedAppFiles": [
-    {
-      "settingId": "auxiliary-file-a",
-      "from": "data/auxiliary/user-files/provided-app-files/auxiliary-file-a/sample.txt"
-    }
-  ],
   "license": {
     "key": "MIT"
   },
   "language": "eng",
   "keywords": [
-    "example",
-    "template"
+    "alert",
+    "battery charge"
   ],
   "people": [
     {
-      "firstName": "Charles",
+      "firstName": "Typhaine",
       "middleInitials": null,
-      "lastName": "Darwin",
-      "email": "creator@example.com",
+      "lastName": "Rousteau",
+      "email": "alerte.telemetrie@lpo.fr",
       "roles": [
         "author",
         "creator"
       ],
       "orcid": null,
-      "affiliation": null,
+      "affiliation": "LPO France",
       "affiliationRor": null
     }
   ],
   "funding": [
     {
-      "name": "funder name",
-      "comment": "grant for App"
+      "name": "LIFE Gyp'ACT",
+      "comment": "Action T3.2.1"
     }
   ],
-  "references": [
-    {
-      "type": "IsDescribedBy",
-      "note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
-      "url": "https://anylink.xyz"
-    }
-  ]
+ "documentation": {
+    "url": "https://github.com/alerte-telemetrie/SelectIndividual-byBatteryCharge/blob/master/README.md"
+  }
 }
