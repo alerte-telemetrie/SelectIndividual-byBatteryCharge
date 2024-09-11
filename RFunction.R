@@ -44,7 +44,7 @@ rFunction = function(data, time_now = NULL, dur = 24, low_bat = 10, column_name 
     #---------------------------------------------------------------------------
      
      # Is the battery's charge below the set threshold?
-      if( bat_percent < low_bat) {
+      if( !is.na(bat_percent) & bat_percent < low_bat) {
         Bat_percent <- append(Bat_percent, bat_percent)
         Nloc <- append(Nloc, nloc)
         Ind <- append(Ind, unique(mt_track_id(splitMoveStack)))
