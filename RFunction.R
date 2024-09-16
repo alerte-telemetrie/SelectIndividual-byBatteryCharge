@@ -74,7 +74,7 @@ rFunction = function(data, time_now = NULL, dur = 24, low_bat = 10, column_name 
     
   } else {
     
-    logger.info("You have no individuals whose battery charge is less than ", low_temp, "°C.")
+    logger.info("You have no individuals whose battery charge is less than ", low_bat, "%.")
     return(NULL)
   }
   
