@@ -5,6 +5,8 @@ library('lubridate')
 # low_bat = threshold below which a battery is considered lightly charged between 0 and 100 (in %).
 # column_name = name of the battery charge percentage column between "".
 
+data <- readRDS("C:/Users/typhaine.rousteau/OneDrive - LPO/MoveApps/SelectIndividual-byBatteryCharge/SelectIndividual-byBatteryCharge/tests/testthat/data/data_test_SelectIndividual-byBatteryCharge.rds")
+
 rFunction = function(data, time_now = NULL, dur = 24, low_bat = 10, column_name = "battery_charge_percent")
 {
   Sys.setenv(tz = "UTC") 
@@ -30,39 +32,39 @@ rFunction = function(data, time_now = NULL, dur = 24, low_bat = 10, column_name 
     data_dur <- splitMoveStack[which(mt_time(splitMoveStack) > startTime ), ]
     
     # --------------------------------------------------------------------------
-      
+    
     # Get the battery charge percentage of the last location
-      if(nrow(data_dur) > 0) { 
+    if(nrow(data_dur) > 0) { 
       bat_percent <- as.numeric(data_dur[[nrow(data_dur),column_name]])
-      } else { bat_percent = NA}
-      
+    } else { bat_percent = NA}
+    
     # Get the number of locations recorded during the defined time duration
-      if(nrow(data_dur) > 0 ) { 
-        nloc <- nrow(data_dur)
-      } else { nloc = 0}
+    if(nrow(data_dur) > 0 ) { 
+      nloc <- nrow(data_dur)
+    } else { nloc = 0}
     
     #---------------------------------------------------------------------------
-     
-     # Is the battery's charge below the set threshold?
-      if(!is.na(bat_percent)){
-        if(bat_percent < low_bat) {
+    
+    # Is the battery's charge below the set threshold?
+    if(!is.na(bat_percent) & bat_percent < low_bat){
+    
         Bat_percent <- append(Bat_percent, bat_percent)
         Nloc <- append(Nloc, nloc)
         Ind <- append(Ind, unique(mt_track_id(splitMoveStack)))
-      }
+      
     }
     return(data.frame(Ind, Bat_percent, Nloc, row.names = NULL))
     
   }
-
+  
   output <- lapply(splitStack, helperFunction)	
   
   # Gathers the results in a data frame
   output <- do.call("rbind", output)
   
-  if(nrow(output > 0)) {
+  if(nrow(output) > 0) {
     
-    log_warn(paste("You have", nrow(output),"individuals whose battery charge is less than ", low_bat, "%."))
+    log.warn(paste("You have", nrow(output),"individuals whose battery charge is less than ", low_bat, "%."))
     
     # Writes the csv
     write.csv(output, appArtifactPath("Low_Battery_Animals.csv"), row.names = FALSE)
@@ -79,6 +81,4 @@ rFunction = function(data, time_now = NULL, dur = 24, low_bat = 10, column_name 
   }
   
 }
-
-
 
