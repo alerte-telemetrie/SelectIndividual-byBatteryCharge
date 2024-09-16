@@ -33,7 +33,7 @@ rFunction = function(data, time_now = NULL, dur = 24, low_bat = 10, column_name 
       
     # Get the battery charge percentage of the last location
       if(nrow(data_dur) > 0) { 
-      bat_percent <- data_dur[nrow(data_dur),column_name]
+      bat_percent <- as.numeric(data_dur[[nrow(data_dur),column_name]])
       } else { bat_percent = NA}
       
     # Get the number of locations recorded during the defined time duration
