@@ -5,8 +5,6 @@ library('lubridate')
 # low_bat = threshold below which a battery is considered lightly charged between 0 and 100 (in %).
 # column_name = name of the battery charge percentage column between "".
 
-data <- readRDS("C:/Users/typhaine.rousteau/OneDrive - LPO/MoveApps/SelectIndividual-byBatteryCharge/SelectIndividual-byBatteryCharge/tests/testthat/data/data_test_SelectIndividual-byBatteryCharge.rds")
-
 rFunction = function(data, time_now = NULL, dur = 24, low_bat = 10, column_name = "battery_charge_percent")
 {
   Sys.setenv(tz = "UTC") 
@@ -64,7 +62,7 @@ rFunction = function(data, time_now = NULL, dur = 24, low_bat = 10, column_name 
   
   if(nrow(output) > 0) {
     
-    log.warn(paste("You have", nrow(output),"individuals whose battery charge is less than ", low_bat, "%."))
+    logger.warn(paste("You have", nrow(output),"individuals whose battery charge is less than ", low_bat, "%."))
     
     # Writes the csv
     write.csv(output, appArtifactPath("Low_Battery_Animals.csv"), row.names = FALSE)
